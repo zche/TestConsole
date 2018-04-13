@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.ComponentModel;
 using System.Threading;
 
 namespace testConsole
@@ -21,21 +22,26 @@ namespace testConsole
 
             #endregion
 
+            var setPropertyByDescription = DescriptionHelper.SetPropertyByDescription();
+            Console.WriteLine(setPropertyByDescription);
+
+            var enumDescription = DescriptionHelper.GetEnumDescription<Direction>(Direction.DOWN);
+            Console.WriteLine(enumDescription);
 
             #region 测试json
-            JsonMovie m = new JsonMovie
-            {
-                Name = "非诚勿扰1",
-                Director = "冯小刚",
-                ReleaseYear = 2008,
-                ChiefActor = "葛优",
-                ChiefActress = "舒淇"
-            };
+            //JsonMovie m = new JsonMovie
+            //{
+            //    Name = "非诚勿扰1",
+            //    Director = "冯小刚",
+            //    ReleaseYear = 2008,
+            //    ChiefActor = "葛优",
+            //    ChiefActress = "舒淇"
+            //};
 
-            string json = JsonConvert.SerializeObject(m, Formatting.Indented);
-            Console.WriteLine(json);
+            //string json = JsonConvert.SerializeObject(m, Formatting.Indented);
+            //Console.WriteLine(json);
 
-            JsonMovie v = JsonConvert.DeserializeObject<JsonMovie>(json);
+            //JsonMovie v = JsonConvert.DeserializeObject<JsonMovie>(json);
             #endregion
             Console.WriteLine("Hello World from docker!");
             Console.ReadLine();
