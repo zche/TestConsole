@@ -7,7 +7,7 @@ namespace testConsole
 {
     public class JsonMovie
     {
-        [JsonProperty(Order = 4)]
+        [JsonProperty("movieName",Order = 4)]
         public string Name { get; set; }
 
         [JsonProperty(Order = 0)]

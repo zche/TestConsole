@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Threading;
 
 namespace testConsole
@@ -22,7 +23,19 @@ namespace testConsole
 
 
             #region 测试json
+            JsonMovie m = new JsonMovie
+            {
+                Name = "非诚勿扰1",
+                Director = "冯小刚",
+                ReleaseYear = 2008,
+                ChiefActor = "葛优",
+                ChiefActress = "舒淇"
+            };
 
+            string json = JsonConvert.SerializeObject(m, Formatting.Indented);
+            Console.WriteLine(json);
+
+            JsonMovie v = JsonConvert.DeserializeObject<JsonMovie>(json);
             #endregion
             Console.WriteLine("Hello World from docker!");
             Console.ReadLine();
