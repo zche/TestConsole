@@ -36,6 +36,7 @@ namespace testConsole
             var type = obj.GetType();
             //var name = Enum.GetName(type, obj);
             FieldInfo field = type.GetField(obj.ToString());
+            
             DescriptionAttribute descAttr = Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute)) as DescriptionAttribute;
             if (descAttr == null)
             {
