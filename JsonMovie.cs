@@ -17,7 +17,7 @@ namespace testConsole
         public string Director { get; set; }
 
         [Description("发行年份")]
-        public int ReleaseYear { get; set; }
+        public string ReleaseYear { get; set; }
 
         [Description("男猪脚")]
         [JsonProperty(Order = -3)]

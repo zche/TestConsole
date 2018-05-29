@@ -20,7 +20,7 @@ namespace testConsole
                 var v = (DescriptionAttribute[])item.GetCustomAttributes(typeof(DescriptionAttribute), false);
                 var descriptionName = v[0].Description;
 
-                item.SetValue(ent, descriptionName + ":1");
+                item.SetValue(ent, descriptionName);
             }
             return JsonConvert.SerializeObject(ent);
         }
